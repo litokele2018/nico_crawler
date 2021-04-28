@@ -35,7 +35,7 @@ function downloadFile(dirName, uri, filename, callback) {
   }
   var stream = fs.createWriteStream(filename);
   let request = http;
-  if (uri.slice(0, 5) === 'https') {
+  if (uri.slice(0, 5) === "https") {
     request = https;
   }
   request.get(uri, (res) => {
@@ -157,3 +157,6 @@ c.queue(u);
 //     },
 //   },
 // ]);
+module.exports = {
+  downloadFile
+}
